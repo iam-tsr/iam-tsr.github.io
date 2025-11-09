@@ -1,0 +1,28 @@
+# Docker
+.dockerignore
+Dockerfile
+docker-compose.yml
+.docker/
+
+# Git
+.git/
+.gitignore
+
+# Documentation
+README.md
+deploy.sh
+
+# Development files
+.vscode/
+.idea/
+
+# macOS
+.DS_Store
+
+# Windows
+Thumbs.db
+
+# Temporary files
+*.tmp
+*~
+*.log

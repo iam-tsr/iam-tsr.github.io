@@ -1,0 +1,453 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Linux Setup and Installation Guide">
+    <title>Linux Setup - Tushar Soni</title>
+    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* Layout with sidebar */
+        .setup-layout {
+            display: flex;
+            gap: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 6rem 2rem 2rem;
+        }
+
+        /* Sidebar Navigation */
+        .sidebar-nav {
+            position: sticky;
+            top: 6rem;
+            width: 250px;
+            height: fit-content;
+            background-color: var(--bg-secondary);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 1.5rem;
+        }
+
+        .sidebar-nav h3 {
+            color: var(--accent-color);
+            font-size: 1rem;
+            margin-bottom: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .sidebar-nav ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .sidebar-nav li {
+            margin-bottom: 0.75rem;
+        }
+
+        .sidebar-nav a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-size: 0.9rem;
+            transition: var(--transition);
+            display: block;
+            padding: 0.5rem;
+            border-radius: 4px;
+        }
+
+        .sidebar-nav a:hover,
+        .sidebar-nav a.active {
+            color: var(--accent-color);
+            background-color: rgba(139, 92, 246, 0.1);
+            padding-left: 1rem;
+        }
+
+        /* Main content */
+        .setup-content {
+            flex: 1;
+            min-width: 0;
+        }
+
+        .container.setup-container {
+            max-width: 100%;
+            padding: 0;
+            margin: 0;
+        }
+
+        /* Code blocks */
+        .code-block {
+            background-color: var(--bg-secondary);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+            overflow-x: auto;
+            position: relative;
+        }
+
+        .code-block pre {
+            margin: 0;
+            margin-top: 2rem;
+            color: var(--text-primary);
+            font-family: 'Courier New', Courier, monospace;
+            font-size: 0.9rem;
+            line-height: 1.6;
+            white-space: pre-wrap;
+            word-wrap: break-word;
+        }
+
+        .code-block code {
+            color: #7dd3fc;
+        }
+
+        .section-title {
+            color: var(--accent-color);
+            font-size: 1.5rem;
+            margin-top: 2rem;
+            margin-bottom: 1rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid var(--border-color);
+            scroll-margin-top: 6rem;
+        }
+
+        .command-description {
+            color: var(--text-secondary);
+            margin-bottom: 0.5rem;
+            font-style: italic;
+        }
+
+        .copy-btn {
+            position: absolute;
+            top: 0.75rem;
+            right: 0.75rem;
+            background-color: var(--accent-color);
+            color: var(--bg-primary);
+            border: none;
+            padding: 0.5rem 1rem;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 0.85rem;
+            transition: var(--transition);
+            z-index: 10;
+        }
+
+        .copy-btn:hover {
+            background-color: var(--accent-hover);
+        }
+
+        .note {
+            background-color: rgba(139, 92, 246, 0.1);
+            border-left: 4px solid var(--accent-color);
+            padding: 1rem;
+            margin: 1rem 0;
+            border-radius: 4px;
+        }
+
+        .note p {
+            margin: 0;
+            color: var(--text-secondary);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 1024px) {
+            .sidebar-nav {
+                display: none;
+            }
+
+            .setup-layout {
+                padding: 5rem 2rem 2rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .setup-layout {
+                padding: 5rem 1rem 2rem;
+            }
+
+            .copy-btn {
+                font-size: 0.75rem;
+                padding: 0.4rem 0.8rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Main Content -->
+    <main class="container setup-container">
+        <div class="setup-layout">
+            <!-- Sidebar Navigation -->
+            <aside class="sidebar-nav">
+                <h3>Quick Navigation</h3>
+                <ul>
+                    <li><a href="#system-update">System Update</a></li>
+                    <li><a href="#dev-tools">Development Tools</a></li>
+                    <li><a href="#docker">Docker Installation</a></li>
+                    <li><a href="#vscode">VS Code</a></li>
+                    <li><a href="#utilities">Useful Utilities</a></li>
+                    <li><a href="#bash-aliases">Bash Aliases</a></li>
+                    <li><a href="#ssh-keys">SSH Keys</a></li>
+                    <li><a href="#custom-script">Custom Script</a></li>
+                </ul>
+            </aside>
+
+            <!-- Main Content Area -->
+            <div class="setup-content">
+                <section class="section active">
+                    <div class="hero">
+                        <h1 class="title">Linux Setup Guide</h1>
+                        <p class="tagline">Bash commands and installation scripts</p>
+                    </div>
+                    
+                    <div class="content">
+                <!-- System Update -->
+                <h2 id="system-update" class="section-title">System Update</h2>
+                <p class="command-description">Update and upgrade your system packages:</p>
+                <div class="code-block">
+                    <pre><code># Update package list
+sudo apt update
+
+# Upgrade installed packages
+sudo apt upgrade -y
+
+# Full system upgrade
+sudo apt full-upgrade -y
+
+# Clean up unused packages
+sudo apt autoremove -y
+sudo apt autoclean</code></pre>
+                </div>
+
+                <!-- Essential Tools -->
+                <h2 id="dev-tools" class="section-title">Essential Development Tools</h2>
+                <p class="command-description">Install basic development tools and utilities:</p>
+                <div class="code-block">
+                    <pre><code># Build essentials
+sudo apt install -y build-essential
+
+# Git
+sudo apt install -y git
+
+# Curl and Wget
+sudo apt install -y curl wget
+
+# Vim and Nano
+sudo apt install -y vim nano
+
+# Python 3 and pip
+sudo apt install -y python3 python3-pip python3-venv
+
+# Node.js and npm (using NodeSource)
+curl -fsSL https://deb.nodesource.com/setup_lts.x | sudo -E bash -
+sudo apt install -y nodejs</code></pre>
+                </div>
+
+                <!-- Docker Installation -->
+                <h2 id="docker" class="section-title">Docker Installation</h2>
+                <p class="command-description">Install Docker and Docker Compose:</p>
+                <div class="code-block">
+                    <pre><code># Remove old versions
+sudo apt remove docker docker-engine docker.io containerd runc
+
+# Install dependencies
+sudo apt install -y \
+    apt-transport-https \
+    ca-certificates \
+    curl \
+    gnupg \
+    lsb-release
+
+# Add Docker's official GPG key
+curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o /usr/share/keyrings/docker-archive-keyring.gpg
+
+# Set up the stable repository
+echo \
+  "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/docker-archive-keyring.gpg] https://download.docker.com/linux/ubuntu \
+  $(lsb_release -cs) stable" | sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
+
+# Install Docker Engine
+sudo apt update
+sudo apt install -y docker-ce docker-ce-cli containerd.io docker-compose-plugin
+
+# Add your user to docker group (no sudo needed)
+sudo usermod -aG docker $USER
+
+# Verify installation
+docker --version
+docker compose version</code></pre>
+                </div>
+
+                <div class="note">
+                    <p><strong>Note:</strong> Log out and log back in for the docker group changes to take effect.</p>
+                </div>
+
+                <!-- VS Code Installation -->
+                <h2 id="vscode" class="section-title">VS Code Installation</h2>
+                <p class="command-description">Install Visual Studio Code:</p>
+                <div class="code-block">
+                    <pre><code># Import Microsoft GPG key
+wget -qO- https://packages.microsoft.com/keys/microsoft.asc | gpg --dearmor > packages.microsoft.gpg
+sudo install -o root -g root -m 644 packages.microsoft.gpg /etc/apt/trusted.gpg.d/
+sudo sh -c 'echo "deb [arch=amd64,arm64,armhf signed-by=/etc/apt/trusted.gpg.d/packages.microsoft.gpg] https://packages.microsoft.com/repos/code stable main" > /etc/apt/sources.list.d/vscode.list'
+rm -f packages.microsoft.gpg
+
+# Install VS Code
+sudo apt update
+sudo apt install -y code</code></pre>
+                </div>
+
+                <!-- Useful Utilities -->
+                <h2 id="utilities" class="section-title">Useful Utilities</h2>
+                <p class="command-description">Additional helpful tools:</p>
+                <div class="code-block">
+                    <pre><code># htop - interactive process viewer
+sudo apt install -y htop
+
+# tree - directory tree viewer
+sudo apt install -y tree
+
+# ncdu - disk usage analyzer
+sudo apt install -y ncdu
+
+# tmux - terminal multiplexer
+sudo apt install -y tmux
+
+# bat - better cat with syntax highlighting
+sudo apt install -y bat
+
+# fzf - fuzzy finder
+sudo apt install -y fzf
+
+# ripgrep - fast search tool
+sudo apt install -y ripgrep
+
+# tldr - simplified man pages
+sudo apt install -y tldr
+
+# neofetch - system information
+sudo apt install -y neofetch</code></pre>
+                </div>
+
+                <!-- Bash Aliases -->
+                <h2 id="bash-aliases" class="section-title">Useful Bash Aliases</h2>
+                <p class="command-description">Add these to your ~/.bashrc or ~/.bash_aliases:</p>
+                <div class="code-block">
+                    <pre><code># Navigation
+alias ..='cd ..'
+alias ...='cd ../..'
+alias ....='cd ../../..'
+
+# List files
+alias ll='ls -alF'
+alias la='ls -A'
+alias l='ls -CF'
+
+# Git shortcuts
+alias gs='git status'
+alias ga='git add'
+alias gc='git commit'
+alias gp='git push'
+alias gl='git log --oneline --graph --all'
+
+# System
+alias update='sudo apt update && sudo apt upgrade -y'
+alias cleanup='sudo apt autoremove -y && sudo apt autoclean'
+
+# Docker
+alias dps='docker ps'
+alias dpsa='docker ps -a'
+alias di='docker images'
+alias dstop='docker stop $(docker ps -aq)'
+alias drm='docker rm $(docker ps -aq)'
+
+# Python
+alias python='python3'
+alias pip='pip3'
+
+# Apply aliases
+source ~/.bashrc</code></pre>
+                </div>
+
+                <!-- SSH Keys -->
+                <h2 id="ssh-keys" class="section-title">SSH Key Generation</h2>
+                <p class="command-description">Generate SSH keys for Git and remote servers:</p>
+                <div class="code-block">
+                    <pre><code># Generate new SSH key
+ssh-keygen -t ed25519 -C "your.email@example.com"
+
+# Start ssh-agent
+eval "$(ssh-agent -s)"
+
+# Add SSH key to agent
+ssh-add ~/.ssh/id_ed25519
+
+# Copy public key to clipboard (if xclip installed)
+cat ~/.ssh/id_ed25519.pub | xclip -selection clipboard
+
+# Or display the key
+cat ~/.ssh/id_ed25519.pub</code></pre>
+                </div>
+
+                <!-- Custom Scripts -->
+                <h2 id="custom-script" class="section-title">Custom Installation Script</h2>
+                <p class="command-description">Create a master setup script (save as setup.sh):</p>
+                <div class="code-block">
+                    <pre><code>#!/bin/bash
+
+# Colors for output
+RED='\033[0;31m'
+GREEN='\033[0;32m'
+YELLOW='\033[1;33m'
+NC='\033[0m' # No Color
+
+echo -e "${GREEN}Starting Linux Development Environment Setup${NC}"
+
+# Update system
+echo -e "${YELLOW}Updating system...${NC}"
+sudo apt update && sudo apt upgrade -y
+
+# Install essential packages
+echo -e "${YELLOW}Installing essential packages...${NC}"
+sudo apt install -y \
+    build-essential \
+    git \
+    curl \
+    wget \
+    vim \
+    htop \
+    tree \
+    python3 \
+    python3-pip \
+    nodejs \
+    npm
+
+# Install Docker
+echo -e "${YELLOW}Installing Docker...${NC}"
+curl -fsSL https://get.docker.com -o get-docker.sh
+sudo sh get-docker.sh
+sudo usermod -aG docker $USER
+rm get-docker.sh
+
+echo -e "${GREEN}Setup complete! Please log out and log back in.${NC}"</code></pre>
+                </div>
+
+                <div class="note">
+                    <p><strong>Usage:</strong> Make the script executable with <code>chmod +x setup.sh</code> and run it with <code>./setup.sh</code></p>
+                </div>
+
+                    </div>
+                </section>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <p>&copy; 2025 Tushar Soni. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="../js/linux-setup.js"></script>
+</body>
+</html>
