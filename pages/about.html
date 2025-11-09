@@ -3,15 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Personal website - AI Engineer with passion for Visual Design">
-    <title>About - Tushar Soni</title>
+    <meta name="description" content="personal website">
+    <title>about</title>
     <link rel="stylesheet" href="../css/styles.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css">
 </head>
 <body>
     <!-- Navigation -->
     <nav class="navbar">
         <div class="nav-container">
+            <a href="about.html" class="nav-logo"> </a>
             <ul class="nav-links">
                 <li><a href="about.html" class="nav-link active">about</a></li>
                 <li><a href="projects.html" class="nav-link">projects</a></li>
@@ -25,28 +26,21 @@
     <main class="container">
         <section class="section active">
             <div class="hero">
-                <h1 class="title">Tushar Soni <span class="subtitle-inline">aka TSR</span></h1>
+                <h1 class="name-title">Tushar Soni <span class="subtitle-inline">aka TSR</span></h1>
                 <p class="tagline">AI Engineer with passion for Visual Design</p>
             </div>
             
-            <div class="content">
-                <p>Hello Write your biography here. Tell the world about yourself. Link to your favorite <a href="https://reddit.com" target="_blank" rel="noopener noreferrer">subreddit</a>. You can put a picture in, too. The code is already in, just name your picture prof_pic.jpg and put it in the img/ folder.</p>
-                
-                <p>Put your address / P.O. box / other info right below your picture. You can also disable any of these elements by editing profile property of the YAML header of your _pages/ about.md. Edit _bibliography/papers.bib and Jekyll will render your <a href="#publications">publications page</a> automatically.</p>
-                
-                <p>Link to your social media connections, too. This theme is set up to use <a href="https://fontawesome.com/" target="_blank" rel="noopener noreferrer">Font Awesome icons</a> and <a href="https://jpswalsh.github.io/academicons/" target="_blank" rel="noopener noreferrer">Academicons</a>, like the ones below. Add your Facebook, Twitter, LinkedIn, Google Scholar, or just disable all of them.</p>
+            <div class="content" id="about">
+                <!-- Content will be loaded from about.md -->
                 
                 <div class="social-links">
-                    <a href="https://github.com" target="_blank" rel="noopener noreferrer" class="social-icon" aria-label="GitHub">
+                    <a href="https://github.com/iam-tsr" target="_blank" rel="noopener noreferrer" class="social-icon" aria-label="GitHub">
                         <i class="fab fa-github"></i>
                     </a>
-                    <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" class="social-icon" aria-label="Twitter">
-                        <i class="fab fa-twitter"></i>
+                    <a href="https://x.com/iam_tsr" target="_blank" rel="noopener noreferrer" class="social-icon" aria-label="X-Twitter">
+                        <i class="fa-brands fa-x-twitter"></i>
                     </a>
-                    <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" class="social-icon" aria-label="LinkedIn">
-                        <i class="fab fa-linkedin"></i>
-                    </a>
-                    <a href="mailto:your.email@example.com" class="social-icon" aria-label="Email">
+                    <a href="mailto:tusharsoni.info@gmail.com" class="social-icon" aria-label="Email">
                         <i class="fas fa-envelope"></i>
                     </a>
                 </div>
@@ -61,6 +55,13 @@
         </div>
     </footer>
 
+    <script src="../js/markdown-parser.js"></script>
+    <script>
+        // Load the markdown content when page loads
+        document.addEventListener('DOMContentLoaded', function() {
+            loadMarkdownContent('../content/about.md', '#about');
+        });
+    </script>
     <script src="../js/about.js"></script>
 </body>
 </html>
