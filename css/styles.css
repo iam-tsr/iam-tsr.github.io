@@ -142,7 +142,7 @@ body {
 }
 
 .title {
-    font-size: 2.5rem;
+    font-size: 2rem;
     margin-bottom: 0.5rem;
     color: var(--text-primary);
     line-height: 1.2;
@@ -154,7 +154,6 @@ body {
 
 .name-title {
     font-size: 2.5rem;
-    margin-bottom: 0.5rem;
     color: var(--text-primary);
     line-height: 1.2;
 }
@@ -165,23 +164,22 @@ body {
 
 .subtitle-inline {
     color: var(--text-primary);
-    font-weight: 350; /* Thin weight */
+    font-weight: 350;
 }
 
-.tagline p {
-    /* font-size: 1.5rem; */
-    color: var(--text-primary);
+.name-title {
+    margin-bottom: -2rem;
 }
 
 /* Content */
 .content {
     line-height: 1.8;
-    margin-top: -2rem;
+    margin-top: -1.5rem;
 }
 
 .content p {
-    margin-bottom: 1.5rem;
-    color: var(--text-primary);
+    margin-bottom: 0.5rem;
+    color: var(--text-secondary);
 }
 
 .content a {
@@ -194,6 +192,89 @@ body {
 .content a:hover {
     color: var(--accent-hover);
     border-bottom-color: var(--accent-hover);
+}
+
+/* Featured Projects Section */
+.featured-projects-section {
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+}
+
+.featured-projects-section .title {
+    margin-bottom: 1rem;
+    font-weight: 200;
+}
+
+.featured-projects-content h3 {
+    color: var(--text-primary);
+    font-size: 1.2rem;
+    font-weight: 300;
+    margin-bottom: 0.2rem;
+}
+
+.featured-projects-content p {
+    color: var(--text-secondary);
+    margin-bottom: 0.5rem;
+    line-height: 1.6;
+}
+
+.featured-projects-content a {
+    color: var(--accent-color);
+    text-decoration: none;
+    transition: var(--transition);
+    font-weight: 300;
+}
+
+.featured-projects-content a:hover {
+    color: var(--accent-hover);
+}
+
+.featured-projects-content hr {
+    border: none;
+    border-top: 1px solid var(--border-color);
+    margin: 1rem 0;
+    opacity: 0.5;
+}
+
+/* Resources Section */
+.resources-section {
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+}
+
+.resources-section .title {
+    margin-bottom: 1rem;
+    font-weight: 200;
+}
+
+.resources-content p {
+    color: var(--text-primary);
+    margin-bottom: 0.5rem;
+    line-height: 1.6;
+    font-size: 1.2rem;
+}
+
+.resources-content a {
+    color: var(--accent-color);
+    text-decoration: none;
+    transition: var(--transition);
+    font-weight: 300;
+}
+
+.resources-content a:hover {
+    color: var(--accent-hover);
+}
+
+.resources-content ul {
+    list-style-type: circle;
+    margin-left: 1.5rem;
+    font-size: 1.2rem;
+}
+
+.resources-content li {
+    color: var(--text-primary);
+    margin-bottom: 0.5rem;
+    line-height: 1.6;
 }
 
 /* Social Links */
@@ -214,229 +295,6 @@ body {
     transform: translateY(-3px);
 }
 
-/* Projects Grid */
-.projects-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 2rem;
-    margin-top: 2rem;
-}
-
-.project-card {
-    background-color: var(--bg-secondary);
-    padding: 2rem;
-    border-radius: 8px;
-    border: 1px solid var(--border-color);
-    transition: var(--transition);
-}
-
-.project-card:hover {
-    transform: translateY(-5px);
-    border-color: var(--accent-color);
-}
-
-.project-card h3 {
-    color: var(--text-primary);
-    margin-bottom: 1rem;
-    font-size: 1.5rem;
-    font-weight: 200; /* Thin weight */
-}
-
-.project-card p {
-    color: var(--text-secondary);
-    margin-bottom: 1.5rem;
-}
-
-.project-links {
-    display: flex;
-    gap: 1rem;
-    flex-wrap: wrap;
-}
-
-.project-links a {
-    color: var(--accent-color);
-    text-decoration: none;
-    padding: 0.5rem 1rem;
-    border: 1px solid var(--accent-color);
-    border-radius: 4px;
-    transition: var(--transition);
-    font-size: 0.9rem;
-}
-
-.project-links a:hover {
-    background-color: var(--accent-color);
-    color: var(--bg-primary);
-}
-
-/* Repository List */
-.repo-list {
-    display: flex;
-    flex-direction: column;
-    gap: 1.5rem;
-    margin-top: 2rem;
-}
-
-.repo-item {
-    background-color: var(--bg-secondary);
-    padding: 1.5rem;
-    border-radius: 8px;
-    border: 1px solid var(--border-color);
-    transition: var(--transition);
-}
-
-.repo-item:hover {
-    border-color: var(--accent-color);
-    transform: translateX(5px);
-}
-
-.repo-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 0.75rem;
-    flex-wrap: wrap;
-    gap: 1rem;
-}
-
-.repo-header h3 {
-    color: var(--text-primary);
-    font-size: 1.25rem;
-    font-weight: 200; /* Thin weight */
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-}
-
-.repo-language {
-    background-color: var(--accent-color);
-    color: var(--bg-primary);
-    padding: 0.25rem 0.75rem;
-    border-radius: 12px;
-    font-size: 0.85rem;
-}
-
-.repo-item p {
-    color: var(--text-secondary);
-    margin-bottom: 1rem;
-}
-
-.repo-stats {
-    display: flex;
-    gap: 1.5rem;
-    color: var(--text-secondary);
-    font-size: 0.9rem;
-}
-
-.repo-stats span {
-    display: flex;
-    align-items: center;
-    gap: 0.4rem;
-}
-
-/* CV Section */
-.cv-content {
-    max-width: 700px;
-}
-
-.cv-section {
-    margin-bottom: 3rem;
-}
-
-.cv-section h2 {
-    color: var(--text-primary);
-    font-size: 1.75rem;
-    font-weight: 200; /* Thin weight */
-    margin-bottom: 1.5rem;
-    padding-bottom: 0.5rem;
-    border-bottom: 2px solid var(--accent-color);
-}
-
-.cv-item {
-    margin-bottom: 2rem;
-}
-
-.cv-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: baseline;
-    margin-bottom: 0.5rem;
-    flex-wrap: wrap;
-    gap: 0.5rem;
-}
-
-.cv-header h3 {
-    color: var(--text-primary);
-    font-size: 1.25rem;
-    font-weight: 200; /* Thin weight */
-}
-
-.cv-date {
-    color: var(--accent-color);
-    font-size: 0.9rem;
-    font-weight: 300; /* Light weight */
-}
-
-.cv-company {
-    color: var(--text-secondary);
-    font-weight: 200; /* Thin weight */
-    margin-bottom: 0.5rem;
-}
-
-.cv-item p {
-    color: var(--text-secondary);
-}
-
-/* Skills Grid */
-.skills-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 1.5rem;
-}
-
-.skill-category {
-    background-color: var(--bg-secondary);
-    padding: 1.5rem;
-    border-radius: 8px;
-    border: 1px solid var(--border-color);
-}
-
-.skill-category h4 {
-    color: var(--accent-color);
-    margin-bottom: 0.75rem;
-    font-size: 1.1rem;
-    font-weight: 200; /* Thin weight */
-}
-
-.skill-category p {
-    color: var(--text-secondary);
-    margin: 0;
-}
-
-/* CV Download Button */
-.cv-download {
-    margin-top: 3rem;
-    text-align: center;
-}
-
-.btn-download {
-    display: inline-flex;
-    align-items: center;
-    gap: 0.75rem;
-    padding: 1rem 2rem;
-    background-color: var(--accent-color);
-    color: var(--bg-primary);
-    text-decoration: none;
-    border-radius: 8px;
-    font-weight: 300; /* Light weight */
-    transition: var(--transition);
-}
-
-.btn-download:hover {
-    background-color: var(--accent-hover);
-    transform: translateY(-2px);
-    box-shadow: 0 5px 15px rgba(139, 92, 246, 0.3);
-}
-
 /* Footer */
 .footer {
     position: fixed;
@@ -450,10 +308,19 @@ body {
     z-index: 999;
 }
 
-.footer-content p {
+.footer-content {
     color: var(--text-secondary);
-    font-size: 0.9rem;
+}
+
+.footer-content a {
+    color: var(--accent-color);
+    font-size: 1rem;
     margin: 0;
+    padding: 0 0.5rem;
+}
+
+.footer-content a:hover {
+    color: var(--accent-hover);
 }
 
 /* Responsive Design */
@@ -476,14 +343,6 @@ body {
 
     .nav-link {
         font-size: 0.9rem;
-    }
-
-    .projects-grid {
-        grid-template-columns: 1fr;
-    }
-
-    .skills-grid {
-        grid-template-columns: 1fr;
     }
 
     .social-links {
@@ -520,12 +379,6 @@ body {
         padding: 5rem 1rem 3rem;
     }
 
-    .project-card,
-    .repo-item,
-    .skill-category {
-        padding: 1.5rem;
-    }
-
     .cv-header {
         flex-direction: column;
         align-items: flex-start;
@@ -540,7 +393,10 @@ body {
 }
 
 /* Accessibility */
-.nav-link:focus,
+.nav-link:focus {
+    outline: none;
+}
+
 .social-icon:focus,
 .content a:focus,
 .project-links a:focus,

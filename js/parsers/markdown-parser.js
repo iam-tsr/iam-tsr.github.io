@@ -2,6 +2,11 @@
 function parseMarkdown(markdown) {
     let html = markdown;
     
+    // Horizontal rules (must be before headers)
+    html = html.replace(/^---$/gim, '<hr>');
+    html = html.replace(/^\*\*\*$/gim, '<hr>');
+    html = html.replace(/^___$/gim, '<hr>');
+    
     // Headers
     html = html.replace(/^### (.*$)/gim, '<h3>$1</h3>');
     html = html.replace(/^## (.*$)/gim, '<h2>$1</h2>');
@@ -18,9 +23,10 @@ function parseMarkdown(markdown) {
     // Links
     html = html.replace(/\[([^\]]+)\]\(([^)]+)\)/gim, '<a href="$2" target="_blank" rel="noopener noreferrer">$1</a>');
     
-    // Line breaks to paragraphs
+    // Line breaks to paragraphs and lists
     const lines = html.split('\n');
     let inParagraph = false;
+    let inList = false;
     let result = [];
     
     for (let i = 0; i < lines.length; i++) {
@@ -32,17 +38,46 @@ function parseMarkdown(markdown) {
                 result.push('</p>');
                 inParagraph = false;
             }
+            if (inList) {
+                result.push('</ul>');
+                inList = false;
+            }
             continue;
         }
         
         // Skip lines that are already HTML tags
-        if (line.match(/^<h[1-6]>/) || line.match(/^<\/h[1-6]>/)) {
+        if (line.match(/^<h[1-6]>/) || line.match(/^<\/h[1-6]>/) || line.match(/^<hr>/)) {
             if (inParagraph) {
                 result.push('</p>');
                 inParagraph = false;
             }
+            if (inList) {
+                result.push('</ul>');
+                inList = false;
+            }
             result.push(line);
             continue;
+        }
+        
+        // Handle list items
+        if (line.match(/^-\s+(.+)/)) {
+            const listContent = line.replace(/^-\s+/, '');
+            if (inParagraph) {
+                result.push('</p>');
+                inParagraph = false;
+            }
+            if (!inList) {
+                result.push('<ul>');
+                inList = true;
+            }
+            result.push(`<li>${listContent}</li>`);
+            continue;
+        }
+        
+        // Close list if we're in one and encounter non-list content
+        if (inList) {
+            result.push('</ul>');
+            inList = false;
         }
         
         // Start new paragraph
@@ -58,6 +93,9 @@ function parseMarkdown(markdown) {
     
     if (inParagraph) {
         result.push('</p>');
+    }
+    if (inList) {
+        result.push('</ul>');
     }
     
     return result.join('');

@@ -15,8 +15,6 @@
             <a href="about.html" class="nav-logo"> </a>
             <ul class="nav-links">
                 <li><a href="about.html" class="nav-link active">about</a></li>
-                <li><a href="projects.html" class="nav-link">projects</a></li>
-                <li><a href="repositories.html" class="nav-link">repositories</a></li>
                 <li><a href="../assets/cv.pdf" class="nav-link" target="_blank">cv</a></li>
             </ul>
         </div>
@@ -27,22 +25,24 @@
         <section class="section active">
             <div class="hero">
                 <h1 class="name-title">Tushar Soni <span class="subtitle-inline">aka TSR</span></h1>
-                <p class="tagline">AI Engineer with passion for Visual Design</p>
+                <!-- <p class="tagline">AI Engineer with passion for Visual Design</p> -->
             </div>
             
             <div class="content" id="about">
                 <!-- Content will be loaded from about.md -->
-                
-                <div class="social-links">
-                    <a href="https://github.com/iam-tsr" target="_blank" rel="noopener noreferrer" class="social-icon" aria-label="GitHub">
-                        <i class="fab fa-github"></i>
-                    </a>
-                    <a href="https://x.com/iam_tsr" target="_blank" rel="noopener noreferrer" class="social-icon" aria-label="X-Twitter">
-                        <i class="fa-brands fa-x-twitter"></i>
-                    </a>
-                    <a href="mailto:tusharsoni.info@gmail.com" class="social-icon" aria-label="Email">
-                        <i class="fas fa-envelope"></i>
-                    </a>
+            </div>
+            
+            <div class="featured-projects-section">
+                <h2 class="title">projects</h2>
+                <div id="featured-projects" class="featured-projects-content">
+                    <!-- Featured projects will be loaded from featured-projects.md -->
+                </div>
+            </div>
+
+            <div class="resources-section">
+                <h2 class="title">resources</h2>
+                <div id="resources" class="resources-content">
+                    <!-- Resources will be loaded from resources.md -->
                 </div>
             </div>
         </section>
@@ -51,15 +51,19 @@
     <!-- Footer -->
     <footer class="footer">
         <div class="footer-content">
-            <p>&copy; 2025 Tushar Soni. All rights reserved.</p>
+            <a href="https://github.com/iam-tsr" target="_blank" rel="noopener noreferrer">Github</a>
+             |
+            <a href="https://x.com/iam_tsr" target="_blank" rel="noopener noreferrer">X</a>
         </div>
     </footer>
 
-    <script src="../js/markdown-parser.js"></script>
+    <script src="../js/parsers/markdown-parser.js"></script>
     <script>
         // Load the markdown content when page loads
         document.addEventListener('DOMContentLoaded', function() {
             loadMarkdownContent('../content/about.md', '#about');
+            loadMarkdownContent('../content/featured-projects.md', '#featured-projects');
+            loadMarkdownContent('../content/resources.md', '#resources');
         });
     </script>
     <script src="../js/about.js"></script>
