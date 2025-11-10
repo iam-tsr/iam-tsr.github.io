@@ -12,7 +12,7 @@ $ sudo dnf update
 ```bash
 $ sudo dnf install fastfetch
 ```
-<img src="../assets/fastfetch.png" width=700>
+<img src="../assets/fastfetch.png">
 
 4. Install dependencies
 ```bash
@@ -35,7 +35,7 @@ $ systemctl reboot
 ```
 
 8. After rebooting you will be directed to MOK (Machine Owner Key Enrollment). A similar interface will be showing you as shown in the image below:
-<img src="../assets/mok.png" width=700>
+<img src="../assets/mok.png">
 Press Enroll MOK using keyboard and continue to enroll the key and put the password which you used while creating the key which was 1234
 
 9. After reboot, you will be boot to your normal OS interface which means you have successfully enrolled your key.
@@ -97,19 +97,19 @@ $ sudo dnf update
 ```bash
 $ sudo dnf install community-mysql-server -y
 ```
-<img src="../assets/sql-1.png" width=700>
+<img src="../assets/sql-1.png">
 
 3. Checking SQL status
 ```bash
 $ systemctl status mysqld
 ```
-<img src="../assets/sql-2.png" width=700>
+<img src="../assets/sql-2.png">
 
 4. Check SQL version
 ```bash
 $ mysqld --version
 ```
-<img src="../assets/sql-3.png" width=700>
+<img src="../assets/sql-3.png">
 
 5. Start SQL
 ```bash
@@ -119,14 +119,14 @@ $ sudo systemctl enable mysqld
 ```bash
 $ sudo systemctl start mysqld
 ```
-<img src="../assets/sql-4.png" width=700>
+<img src="../assets/sql-4.png">
 
 6. Create password for sql
 ```bash
 $ sudo mysql_secure_installation
 ```
 *Follow the further inputs as per your requirement.*
-<img src="../assets/sql-5.png" width=700>
+<img src="../assets/sql-5.png">
 
 7. Run SQL
 ```bash
