@@ -20,8 +20,17 @@ function parseMarkdown(markdown) {
     html = html.replace(/\*(.*?)\*/gim, '<em>$1</em>');
     html = html.replace(/_(.*?)_/gim, '<em>$1</em>');
     
-    // Links
-    html = html.replace(/\[([^\]]+)\]\(([^)]+)\)/gim, '<a href="$2" target="_blank" rel="noopener noreferrer">$1</a>');
+    // Links - handle internal vs external links
+    html = html.replace(/\[([^\]]+)\]\(([^)]+)\)/gim, function(match, text, url) {
+        // Check if it's an internal link (relative path or .html file)
+        const isInternal = !url.startsWith('http://') && !url.startsWith('https://') && !url.startsWith('//');
+        
+        if (isInternal) {
+            return `<a href="${url}">${text}</a>`;
+        } else {
+            return `<a href="${url}" target="_blank" rel="noopener noreferrer">${text}</a>`;
+        }
+    });
     
     // Line breaks to paragraphs and lists
     const lines = html.split('\n');
