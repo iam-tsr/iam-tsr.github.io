@@ -139,7 +139,7 @@ body {
 
 /* Hero Section */
 .title {
-    font-size: 2rem;
+    font-size: 2.5rem;
     /* margin-bottom: 1rem; */
     color: var(--text-primary);
     line-height: 1.2;
@@ -147,7 +147,7 @@ body {
 }
 
 .name-title {
-    font-size: 2.5rem;
+    font-size: 3rem;
     color: var(--text-primary);
     line-height: 1.2;
     font-weight: 450;
@@ -159,7 +159,7 @@ body {
 }
 
 .name-title, .subtitle-inline {
-    margin-bottom: 1rem;
+    margin-bottom: 0.5rem;
     margin-top: 1rem;
 }
 
@@ -174,7 +174,7 @@ body {
     font-size: 1rem;
     color: var(--text-primary);
     margin-top: 2rem;
-    font-weight: 200;
+    font-weight: 300;
 }
 
 .end-tagline a {
@@ -187,19 +187,18 @@ body {
     color: var(--accent-hover);
 }
 
-/* Content */
+/* About Content */
 .content {
     line-height: 1.5rem;
 }
 
 .content p {
     font-size: 1rem;
-    margin-bottom: 0.5rem;
+    margin-bottom: 1rem;
     word-spacing: 3px;
     color: var(--text-primary);
 }
 
-/* Bold text customization for about page */
 .content strong,
 .content b {
     font-weight: 500;
@@ -217,22 +216,45 @@ body {
     border-bottom-color: none;
 }
 
-.content h2 {
+/* Code Content */
+.code-content {
+    line-height: 1.5rem;
+}
+
+.code-content p {
+    font-size: 1rem;
+    margin-bottom: 1rem;
+    word-spacing: 3px;
+    color: var(--text-secondary);
+}
+
+.code-content a {
+    font-size: 1rem;
+    color: var(--accent-color);
+    text-decoration: none;
+    transition: var(--transition);
+}
+
+.code-content a:hover {
+    color: var(--accent-hover);
+    border-bottom-color: none;
+}
+
+.code-content h2 {
     font-weight: 300;
     margin-top: 2rem;
     font-size: 1.5rem;
 }
 
-.content h3 {
+.code-content h3 {
     margin-top: 1rem;
     font-weight: 400;
     font-size: 1.25rem;
 }
 
-/* Horizontal Rule (--- in markdown) */
-.content hr {
+.code-content hr {
     border: none;
-    height: 1px; /* Change this value to control thickness */
+    height: 1px;
     background-color: var(--border-color);
 }
 
@@ -242,7 +264,7 @@ body {
 }
 
 .resources-content {
-    margin-top: 1rem;
+    margin-top: 0.5rem;
 }
 .resources-content ul {
     list-style-type: circle;
@@ -324,7 +346,19 @@ body {
         font-size: 2rem;
     }
 
+    .name-title {
+        font-size: 2.25rem;
+    }
+
     .tagline {
+        font-size: 1.1rem;
+    }
+
+    .code-content h2 {
+        font-size: 1.4rem;
+    }
+
+    .code-content h3 {
         font-size: 1.1rem;
     }
 
@@ -347,11 +381,23 @@ body {
 
 @media (max-width: 480px) {
     .title {
-        font-size: 1.75rem;
+        font-size: 1.8rem;
+    }
+
+    .name-title {
+        font-size: 2rem;
     }
 
     .tagline {
         font-size: 1rem;
+    }
+
+    .code-content h2 {
+        font-size: 1.4rem;
+    }
+
+    .code-content h3 {
+        font-size: 1.2rem;
     }
 
     .nav-container {

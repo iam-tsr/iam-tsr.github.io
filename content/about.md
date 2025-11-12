@@ -1,6 +1,6 @@
 **Pre-final year student** @ [GGSIPU](http://www.ipu.ac.in/) • AI + Visual
 
-Yo ;)
+Hey, thanks for your visit! 👋🏼
 
 I’m a **b.tech student specializing in machine learning**, passionate about advancing the frontiers of language and speech intelligence. Over the past few years, I’ve actively contributed to the [FOSS](https://fossunited.org/) and [AI communities](#) through various personal projects and research initiatives.
 
