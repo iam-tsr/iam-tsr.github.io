@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Fedora Linux Setup and Installation Guide">
-    <title>fedora setup guide</title>
+    <meta name="description" content="Projects, models, and datasets">
+    <title>code</title>
     <link rel="stylesheet" href="../css/styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css">
 </head>
@@ -15,31 +15,28 @@
             <a href="about.html" class="nav-logo">TSR</a>
             <ul class="nav-links">
                 <li><a href="about.html" class="nav-link">about</a></li>
-                <li><a href="code.html" class="nav-link">code</a></li>
+                <li><a href="code.html" class="nav-link active">code</a></li>
                 <li><a href="../assets/cv.pdf" class="nav-link" target="_blank">cv</a></li>
             </ul>
         </div>
     </nav>
 
     <!-- Main Content -->
-    <main class="container setup-container">
-        <div class="setup-layout">
-            <!-- Sidebar will be generated dynamically -->
-            
-            <!-- Main Content Area -->
-            <div class="setup-content">
-                <section class="section active">
-                    <div class="hero">
-                        <h1 class="title">fedora setup guide</h1>
-                        <p class="tagline">bash commands and installation guide</p>
-                    </div>
-                    
-                    <div class="content">
-                        <!-- Content will be loaded from fedora-setup-guide.md -->
-                    </div>
-                </section>
+    <main class="container">
+        <section class="section active">
+            <div class="hero">
+                <h1 class="title">Code</h1>
+                <p class="tagline">open source projects and language models with datasets</p>
             </div>
-        </div>
+            
+            <div class="content" id="code">
+                <!-- Content will be loaded from projects.md -->
+            </div>
+
+            <div class="end-tagline">
+                <p><span style="font-style: italic;">For more open source contributions: </span><a href="https://github.com/iam-tsr" target="_blank"><img src="https://img.shields.io/github/followers/iam-tsr?label=Follow%20%40iam-tsr&style=social" alt="Follow @iam-tsr"></a></p>
+            </div>
+        </section>
     </main>
 
     <!-- Footer -->
@@ -51,12 +48,13 @@
         </div>
     </footer>
 
-    <script src="../js/parsers/setup-guide-parser.js"></script>
+    <script src="../js/parsers/markdown-parser.js"></script>
     <script>
         // Load the markdown content when page loads
         document.addEventListener('DOMContentLoaded', function() {
-            loadSetupGuide('../content/fedora-setup-guide.md');
+            loadMarkdownContent('../content/projects.md', '#code');
         });
     </script>
+    <script src="../js/code.js"></script>
 </body>
 </html>

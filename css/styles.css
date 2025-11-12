@@ -41,7 +41,7 @@ body {
     top: 0;
     left: 0;
     right: 0;
-    background-color: var(--bg-primary);
+    background-color: var(--bg-secondary);
     /* backdrop-filter: blur(10px); */
     border-bottom: 1px solid var(--border-color);
     z-index: 1000;
@@ -68,7 +68,7 @@ body {
     text-decoration: none;
     font-size: 1.5rem;
     transition: var(--transition);
-    letter-spacing: 0.1em;
+    font-weight: 450;
 }
 
 .nav-logo:hover {
@@ -140,12 +140,9 @@ body {
 /* Hero Section */
 .title {
     font-size: 2rem;
-    /* margin-bottom: 0.5rem; */
+    /* margin-bottom: 1rem; */
     color: var(--text-primary);
     line-height: 1.2;
-}
-
-.title {
     font-weight: 200;
 }
 
@@ -153,9 +150,6 @@ body {
     font-size: 2.5rem;
     color: var(--text-primary);
     line-height: 1.2;
-}
-
-.name-title {
     font-weight: 450;
 }
 
@@ -164,7 +158,7 @@ body {
     font-weight: 350;
 }
 
-.name-title, .title {
+.name-title, .subtitle-inline {
     margin-bottom: 1rem;
     margin-top: 1rem;
 }
@@ -172,8 +166,25 @@ body {
 .tagline {
     font-size: 1rem;
     color: var(--text-primary);
-    margin-bottom: 0.5rem;
-    font-weight: 300;
+    margin-bottom: 1rem;
+    font-weight: 200;
+}
+
+.end-tagline {
+    font-size: 1rem;
+    color: var(--text-primary);
+    margin-top: 2rem;
+    font-weight: 200;
+}
+
+.end-tagline a {
+    color: var(--accent-color);
+    text-decoration: none;
+    transition: var(--transition);
+}
+
+.end-tagline a:hover {
+    color: var(--accent-hover);
 }
 
 /* Content */
@@ -182,7 +193,7 @@ body {
 }
 
 .content p {
-    margin-bottom: 1rem;
+    margin-bottom: 0.5rem;
     word-spacing: 3px;
     color: var(--text-primary);
 }
@@ -190,14 +201,13 @@ body {
 /* Bold text customization for about page */
 .content strong,
 .content b {
-    font-weight: 500; /* Change this value: 100-900 (default is 700) */
+    font-weight: 500;
 }
 
 .content a {
     color: var(--accent-color);
     text-decoration: none;
     transition: var(--transition);
-    /* border-bottom: 1px solid transparent; */
 }
 
 .content a:hover {
@@ -205,21 +215,34 @@ body {
     border-bottom-color: none;
 }
 
+.content h2 {
+    font-weight: 300;
+    margin-top: 2rem;
+}
+
+.content h3 {
+    margin-top: 1rem;
+    font-weight: 400;
+}
+
+/* Horizontal Rule (--- in markdown) */
+.content hr {
+    border: none;
+    height: 1px; /* Change this value to control thickness */
+    background-color: var(--border-color);
+}
+
 /* Resources Section */
 .resources-section {
     margin-top: 2rem;
-    margin-bottom: 2rem;
 }
 
-.resources-section .title {
-    margin-bottom: 1rem;
-    font-weight: 200;
+.resources-content {
+    margin-top: 1rem;
 }
-
-.resources-content p {
-    color: var(--text-primary);
-    margin-bottom: 0.5rem;
-    line-height: 1.6;
+.resources-content ul {
+    list-style-type: circle;
+    margin-left: 1.5rem;
     font-size: 1rem;
 }
 
@@ -227,23 +250,10 @@ body {
     color: var(--accent-color);
     text-decoration: none;
     transition: var(--transition);
-    font-weight: 300;
 }
 
 .resources-content a:hover {
     color: var(--accent-hover);
-}
-
-.resources-content ul {
-    list-style-type: circle;
-    margin-left: 1.5rem;
-    font-size: 1rem;
-}
-
-.resources-content li {
-    color: var(--text-primary);
-    margin-bottom: 0.5rem;
-    line-height: 1.6;
 }
 
 /* Social Links */
