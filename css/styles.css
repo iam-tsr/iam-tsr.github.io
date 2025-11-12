@@ -21,6 +21,7 @@
 
 html {
     scroll-behavior: smooth;
+    overflow-y: scroll; /* Force scrollbar to prevent layout shift */
 }
 
 body {
@@ -432,8 +433,8 @@ body {
 
 .sidebar-nav a:hover,
 .sidebar-nav a.active {
-    color: var(--accent-color);
-    background-color: rgba(139, 92, 246, 0.1);
+    color: var(--text-primary);
+    background-color: rgba(155, 112, 255, 0.5);
     padding-left: 1rem;
 }
 
@@ -465,6 +466,10 @@ body {
 .setup-content {
     flex: 1;
     min-width: 0;
+}
+
+.setup-content .hero .title {
+    margin-top: 0;
 }
 
 .setup-content img {

@@ -135,7 +135,7 @@ $ sudo mysql -u root -p
 
 *Congratulation you have successfully installed MySQL Community!*
 
-## Now we will install MySQL Workbench
+**Now we will install MySQL Workbench**.
 
 8. Install snapd for smooth installation
 ```bash
@@ -164,7 +164,7 @@ $ sudo dnf-3 config-manager --add-repo https://download.docker.com/linux/fedora/
 **There are two setup for Docker -> Docker Engine or Docker Desktop**
 You can install both but I will recommend you to choose any one. If you want Docker with GUI go with Docker Deskstop other for cli integration go with Docker Engine.
 
-### 2. For Docker Engine
+**2. For Docker Engine**.
 2.1 Install Docker Engine
 ```bash
 $ sudo dnf install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
@@ -177,7 +177,7 @@ $ sudo systemctl enable --now docker
 
 *Docker Engine is ready to use!*
 
-### 3. For Docker Desktop
+**3. For Docker Desktop**.
 3.1 Download the latest [RPM package](https://docs.docker.com/desktop/setup/install/linux/fedora/#install-docker-desktop)
 
 3.2 Make sure you are on downloads directory
