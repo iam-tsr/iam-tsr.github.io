@@ -189,11 +189,11 @@ body {
 
 /* Content */
 .content {
-    line-height: 1.5;
+    line-height: 1.5rem;
 }
 
 .content p {
-    margin-bottom: 0.5rem;
+    margin-bottom: 1rem;
     word-spacing: 3px;
     color: var(--text-primary);
 }
