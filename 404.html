@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script>
+        // GitHub Pages 404 handler for clean URLs
+        (function() {
+            var path = window.location.pathname;
+            
+            // Remove trailing slash if present
+            if (path.endsWith('/') && path.length > 1) {
+                path = path.slice(0, -1);
+            }
+            
+            // Map of clean URLs to actual page paths
+            var routes = {
+                '/about': '/pages/about.html',
+                '/code': '/pages/code.html',
+                '/fedora-setup-guide': '/pages/fedora-setup-guide.html'
+            };
+            
+            // Check if we have a route for this path
+            if (routes[path]) {
+                window.location.replace(routes[path]);
+            } else if (path !== '/') {
+                // Try adding .html extension
+                window.location.replace('/pages' + path + '.html');
+            } else {
+                // Redirect root to about page
+                window.location.replace('/pages/about.html');
+            }
+        })();
+    </script>
+</head>
+</html>
