@@ -194,7 +194,7 @@ function filterSection(sectionId) {
     document.querySelector('.sidebar-btn').classList.remove('active');
     
     // Scroll to top of content
-    document.querySelector('.setup-content').scrollIntoView({ behavior: 'smooth', block: 'start' });
+    // document.querySelector('.setup-content').scrollIntoView({ behavior: 'smooth', block: 'start' });
 }
 
 async function loadSetupGuide(markdownFile) {

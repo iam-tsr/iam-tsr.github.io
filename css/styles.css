@@ -313,10 +313,6 @@ body {
     z-index: 999;
 }
 
-/* .footer-content {
-    color: var(--text-secondary);
-} */
-
 .footer-content a {
     color: var(--accent-color);
     text-decoration: none;
@@ -332,7 +328,6 @@ body {
 .footer-content a + a::before {
     content: "|";
     margin-right: 1rem;
-    /* margin-left: -0.5rem; */
     color: var(--text-secondary);
 }
 
@@ -405,7 +400,7 @@ body {
     }
 
     .nav-logo {
-        font-size: 1rem;
+        font-size: 1.2rem;
     }
 
     .nav-links {
@@ -451,6 +446,13 @@ body {
     padding: 6rem 2rem 2rem;
 }
 
+/* Desktop: Align content with navbar */
+@media (min-width: 1025px) {
+    .setup-layout {
+        margin-right: 27rem;
+    }
+}
+
 .sidebar-nav {
     position: sticky;
     top: 6rem;
@@ -483,7 +485,7 @@ body {
 .sidebar-nav a {
     color: var(--text-secondary);
     text-decoration: none;
-    font-size: 0.9rem;
+    font-size: 1rem;
     font-weight: 300;
     transition: var(--transition);
     display: block;
@@ -526,6 +528,7 @@ body {
 .setup-content {
     flex: 1;
     min-width: 0;
+    max-width: 750px;
 }
 
 .setup-content .hero .title {
@@ -539,6 +542,7 @@ body {
     margin: 1.5rem 0;
     border-radius: 8px;
     border: 1px solid var(--border-color);
+    
 }
 
 .container.setup-container {
@@ -640,6 +644,11 @@ body {
 
     .setup-layout {
         padding: 5rem 2rem 2rem;
+        justify-content: center;
+    }
+
+    .setup-content {
+        max-width: 800px;
     }
 }
 
