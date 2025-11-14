@@ -12,33 +12,27 @@
     <!-- Navigation -->
     <nav class="navbar">
         <div class="nav-container">
-            <a href="../" class="nav-logo"> </a>
+            <a href="../" class="nav-logo" id="nav-logo"> </a>
             <ul class="nav-links">
-                <li><a href="about.html" class="nav-link active">about</a></li>
-                <li><a href="code.html" class="nav-link">code</a></li>
+                <li><a href="about.html" class="nav-link" data-page="about">about</a></li>
+                <li><a href="code.html" class="nav-link" data-page="code">code</a></li>
                 <li><a href="../assets/cv.pdf" class="nav-link" target="_blank">cv</a></li>
             </ul>
         </div>
     </nav>
 
+
     <!-- Main Content -->
     <main class="container">
         <section class="section active">
             <div class="hero">
-                <h1 class="name-title">Tushar Soni <span class="subtitle-inline">aka TSR</span></h1>
+                <h1 class="name-title">Tushar Soni<span class="conjuction"> aka </span><span class="subtitle-inline">TSR</span></h1>
                 <!-- <p class="tagline">write tagline here</p> -->
             </div>
             
             <div class="content" id="about">
                 <!-- Content will be loaded from about.md -->
             </div>
-            
-            <!-- <div class="featured-projects-section">
-                <h2 class="title">projects</h2>
-                <div id="featured-projects" class="featured-projects-content"> -->
-                    <!-- Featured projects will be loaded from featured-projects.md -->
-                <!-- </div>
-            </div> -->
 
             <div class="resources-section">
                 <h2 class="title">resources</h2>
@@ -50,14 +44,9 @@
     </main>
 
     <!-- Footer -->
-    <footer class="footer">
-        <div class="footer-content">
-            <a href="https://github.com/iam-tsr" target="_blank" rel="noopener noreferrer">Github</a>
-            <a href="https://x.com/iam_tsr" target="_blank" rel="noopener noreferrer">X</a>
-            <a href="https://www.linkedin.com/in/iam-tsr/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
-        </div>
-    </footer>
+    <div id="footer-placeholder"></div>
 
+    <script src="../js/load-components.js"></script>
     <script src="../js/parsers/markdown-parser.js"></script>
     <script>
         // Load the markdown content when page loads

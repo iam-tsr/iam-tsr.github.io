@@ -158,6 +158,12 @@ body {
     font-weight: 350;
 }
 
+.conjuction {
+    font-weight: 200;
+    color: var(--text-secondary);
+    font-size: 2.5rem;
+}
+
 .name-title, .subtitle-inline {
     margin-bottom: 0.5rem;
     margin-top: 1rem;
@@ -166,7 +172,7 @@ body {
 .tagline {
     font-size: 1rem;
     color: var(--text-primary);
-    margin-bottom: 1rem;
+    margin-bottom: 2rem;
     font-weight: 200;
 }
 
@@ -201,7 +207,7 @@ body {
 
 .content strong,
 .content b {
-    font-weight: 500;
+    font-weight: 400;
 }
 
 .content a {
@@ -217,15 +223,12 @@ body {
 }
 
 /* Code Content */
-.code-content {
-    line-height: 1.5rem;
-}
-
 .code-content p {
     font-size: 1rem;
-    margin-bottom: 1rem;
     word-spacing: 3px;
-    color: var(--text-secondary);
+    margin-left: 1rem;
+    margin-bottom: 0.5rem;
+    color: var(--text-primary);
 }
 
 .code-content a {
@@ -242,19 +245,26 @@ body {
 
 .code-content h2 {
     font-weight: 300;
-    margin-top: 2rem;
+    margin-bottom: 1rem;
     font-size: 1.5rem;
 }
 
 .code-content h3 {
     margin-top: 1rem;
+    font-size: 1rem;
     font-weight: 400;
-    font-size: 1.25rem;
+    margin-left: 1rem;
+}
+
+.code-content h3::before {
+    content: "• ";
 }
 
 .code-content hr {
     border: none;
     height: 1px;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
     background-color: var(--border-color);
 }
 
@@ -270,6 +280,11 @@ body {
     list-style-type: circle;
     margin-left: 1.5rem;
     font-size: 1rem;
+}
+
+.resources-content strong,
+.resources-content b {
+    font-weight: 400;
 }
 
 .resources-content a {
@@ -376,11 +391,11 @@ body {
 
 @media (max-width: 480px) {
     .title {
-        font-size: 1.8rem;
+        font-size: 2.5rem;
     }
 
     .name-title {
-        font-size: 2rem;
+        font-size: 3rem;
     }
 
     .tagline {
@@ -389,10 +404,6 @@ body {
 
     .code-content h2 {
         font-size: 1.4rem;
-    }
-
-    .code-content h3 {
-        font-size: 1.2rem;
     }
 
     .nav-container {
@@ -423,19 +434,6 @@ body {
         scroll-behavior: smooth;
     }
 }
-
-/* Accessibility */
-/* .nav-link:focus {
-    outline: none;
-} */
-
-/* .social-icon:focus,
-.content a:focus,
-.project-links a:focus,
-.btn-download:focus {
-    outline: 2px solid var(--accent-color);
-    outline-offset: 2px;
-} */
 
 /* Setup Guide Styles */
 .setup-layout {
@@ -578,7 +576,7 @@ body {
 /* Shell prompt styling */
 .code-block .shell-prompt {
     color: var(--accent-color);
-    font-weight: 500;
+    font-weight: 400;
 }
 
 .code-block .shell-command {
