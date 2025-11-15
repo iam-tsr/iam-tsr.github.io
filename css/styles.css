@@ -207,7 +207,7 @@ body {
 
 .content strong,
 .content b {
-    font-weight: 400;
+    font-weight: 500;
 }
 
 .content a {
@@ -252,7 +252,7 @@ body {
 .code-content h3 {
     margin-top: 1rem;
     font-size: 1rem;
-    font-weight: 400;
+    font-weight: 500;
     margin-left: 1rem;
 }
 
@@ -284,7 +284,7 @@ body {
 
 .resources-content strong,
 .resources-content b {
-    font-weight: 400;
+    font-weight: 500;
 }
 
 .resources-content a {
@@ -576,7 +576,7 @@ body {
 /* Shell prompt styling */
 .code-block .shell-prompt {
     color: var(--accent-color);
-    font-weight: 400;
+    font-weight: 500;
 }
 
 .code-block .shell-command {
