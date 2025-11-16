@@ -12,7 +12,12 @@ A RAG based chat application
 
 ---
 
-## Language Models
+## Language & Vision Models
+
+### Helmet Detection with YOLOv8n
+A lightweight, real-time helmet detection
+
+[Github](https://github.com/iam-tsr/helmet-detection) | [Model](https://huggingface.co/iam-tsr/yolov8n-helmet-detection)
 
 ### Sentiment Analysis - English
 Fine-tuned distilbert model using LoRA on custom dataset
