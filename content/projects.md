@@ -33,7 +33,7 @@ Multiple optimized varient of distilbert model trained on clinc dataset
 
 ## Datasets
 
-### Huge dataset for sentiment analysis
+### Huge Dataset for Sentiment Analysis
 Compiled many small datasets into one — Author TSR
 
 [Dataset](https://huggingface.co/datasets/iam-tsr/comments-sentiments)

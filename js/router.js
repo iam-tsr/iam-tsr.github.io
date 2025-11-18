@@ -51,6 +51,18 @@ class Router {
                     link.classList.add('active');
                 }
             });
+            
+            // Hide nav-logo on about page, show on other pages
+            const navLogo = document.getElementById('nav-logo');
+            if (navLogo) {
+                if (currentPath === 'about' || currentPath === '') {
+                    navLogo.textContent = '';
+                    navLogo.style.visibility = 'hidden';
+                } else {
+                    navLogo.textContent = 'TSR';
+                    navLogo.style.visibility = 'visible';
+                }
+            }
         }, 100);
     }
 }

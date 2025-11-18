@@ -35,8 +35,8 @@ export default defineConfig({
           { recursive: true }
         );
         cpSync(
-          resolve(__dirname, 'components'),
-          resolve(__dirname, 'dist/components'),
+          resolve(__dirname, 'js/components'),
+          resolve(__dirname, 'dist/js/components'),
           { recursive: true }
         );
         cpSync(

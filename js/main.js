@@ -25,8 +25,8 @@ async function loadComponent(elementId, componentPath) {
 // Initialize app
 async function initApp() {
     // Load navbar and footer first
-    await loadComponent('navbar-placeholder', '/components/navbar.html');
-    await loadComponent('footer-placeholder', '/components/footer.html');
+    await loadComponent('navbar-placeholder', '/js/components/navbar.html');
+    await loadComponent('footer-placeholder', '/js/components/footer.html');
     
     // Define routes
     const routes = {
