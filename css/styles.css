@@ -19,6 +19,16 @@
     --transition: all 0.3s ease;
 }
 
+[data-theme="light"] {
+    --bg-primary: #ffffff;
+    --bg-secondary: #ebebeb;
+    --text-primary: #1a1a1a;
+    --text-secondary: #4a4a4a;
+    --accent-color: #7c3aed;
+    --accent-hover: #5b21b6;
+    --border-color: #e0e0e0;
+}
+
 html {
     scroll-behavior: smooth;
     overflow-y: scroll; /* Force scrollbar to prevent layout shift */
@@ -106,6 +116,21 @@ body {
     right: 0;
     height: 2px;
     background-color: var(--accent-color);
+}
+
+/* Theme Toggle Icon */
+.theme-icon {
+    color: var(--text-primary);
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: var(--transition);
+    display: flex;
+    align-items: center;
+    margin-left: 0.5rem;
+}
+
+.theme-icon:hover {
+    color: var(--accent-color);
 }
 
 /* Container */

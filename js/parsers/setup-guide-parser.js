@@ -134,12 +134,10 @@ window.copyCode = function(icon) {
         // Change to check icon temporarily
         icon.classList.remove('fa-copy');
         icon.classList.add('fa-check');
-        icon.style.color = '#22c55e';
         
         setTimeout(() => {
             icon.classList.remove('fa-check');
             icon.classList.add('fa-copy');
-            icon.style.color = '#4ade80';
         }, 2000);
     }).catch(err => {
         console.error('Failed to copy:', err);
@@ -192,9 +190,6 @@ window.filterSection = function(sectionId) {
         }
     });
     document.querySelector('.sidebar-btn').classList.remove('active');
-    
-    // Scroll to top of content
-    // document.querySelector('.setup-content').scrollIntoView({ behavior: 'smooth', block: 'start' });
 }
 
 export async function loadSetupGuide(markdownFile) {

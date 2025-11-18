@@ -2,7 +2,7 @@
 
 Hey, thanks for your visit! 👋🏼
 
-I’m a **b.tech student specializing in machine learning**, passionate about advancing the frontiers of language and speech intelligence. Over the past few years, I’ve actively contributed to the [FOSS](https://fossunited.org/) and [AI communities](#) through various personal projects and research initiatives.
+I’m a **b.tech student specializing in machine learning**, passionate about advancing the frontiers of language and speech intelligence. Over the past few years, I’ve actively contributed to the [FOSS](https://fossunited.org/) and [AI communities](/about) through various personal projects and research initiatives.
 
 My **expertise lies in language models**, understanding them from both a mathematical and low-level implementation perspective. I’ve developed a strong foundation in model optimization techniques, and in converting models into efficient, deployable formats. Currently, I’m diving deeper into inference compilers and engines for further enhancement in model performance and scalability.
 

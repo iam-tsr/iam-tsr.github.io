@@ -22,11 +22,47 @@ async function loadComponent(elementId, componentPath) {
     }
 }
 
+// Theme management
+function initTheme() {
+    const savedTheme = localStorage.getItem('theme') || 'dark';
+    document.documentElement.setAttribute('data-theme', savedTheme);
+    updateThemeIcon(savedTheme);
+}
+
+function toggleTheme() {
+    const currentTheme = document.documentElement.getAttribute('data-theme');
+    const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+    
+    document.documentElement.setAttribute('data-theme', newTheme);
+    localStorage.setItem('theme', newTheme);
+    updateThemeIcon(newTheme);
+}
+
+function updateThemeIcon(theme) {
+    const themeIcon = document.querySelector('.theme-icon');
+    if (themeIcon) {
+        if (theme === 'dark') {
+            themeIcon.className = 'fa-solid fa-sun theme-icon';
+        } else {
+            themeIcon.className = 'fa-solid fa-moon theme-icon';
+        }
+    }
+}
+
 // Initialize app
 async function initApp() {
     // Load navbar and footer first
     await loadComponent('navbar-placeholder', '/js/components/navbar.html');
     await loadComponent('footer-placeholder', '/js/components/footer.html');
+    
+    // Initialize theme
+    initTheme();
+    
+    // Add theme toggle event listener
+    const themeToggle = document.getElementById('theme-toggle');
+    if (themeToggle) {
+        themeToggle.addEventListener('click', toggleTheme);
+    }
     
     // Define routes
     const routes = {
