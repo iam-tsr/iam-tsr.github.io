@@ -126,7 +126,7 @@ function escapeHtml(text) {
     return text.replace(/[&<>"']/g, m => map[m]);
 }
 
-function copyCode(icon) {
+window.copyCode = function(icon) {
     const codeBlock = icon.parentElement;
     const code = codeBlock.querySelector('code').textContent;
     
@@ -160,7 +160,7 @@ function generateSidebar(items) {
     return html;
 }
 
-function showAllSections() {
+window.showAllSections = function() {
     const sections = document.querySelectorAll('.guide-section');
     sections.forEach(section => {
         section.style.display = 'block';
@@ -173,7 +173,7 @@ function showAllSections() {
     document.querySelector('.sidebar-btn').classList.add('active');
 }
 
-function filterSection(sectionId) {
+window.filterSection = function(sectionId) {
     const sections = document.querySelectorAll('.guide-section');
     sections.forEach(section => {
         if (section.dataset.section === sectionId) {
@@ -197,7 +197,7 @@ function filterSection(sectionId) {
     // document.querySelector('.setup-content').scrollIntoView({ behavior: 'smooth', block: 'start' });
 }
 
-async function loadSetupGuide(markdownFile) {
+export async function loadSetupGuide(markdownFile) {
     try {
         const response = await fetch(markdownFile);
         if (!response.ok) {

@@ -22,11 +22,12 @@ function parseMarkdown(markdown) {
     
     // Links - handle internal vs external links
     html = html.replace(/\[([^\]]+)\]\(([^)]+)\)/gim, function(match, text, url) {
-        // Check if it's an internal link (relative path or .html file)
-        const isInternal = !url.startsWith('http://') && !url.startsWith('https://') && !url.startsWith('//');
+        // Check if it's an internal link (starts with / or doesn't start with http)
+        const isInternal = url.startsWith('/') || (!url.startsWith('http://') && !url.startsWith('https://') && !url.startsWith('//'));
         
         if (isInternal) {
-            return `<a href="${url}">${text}</a>`;
+            // For internal links, add data-link attribute for client-side routing
+            return `<a href="${url}" data-link>${text}</a>`;
         } else {
             return `<a href="${url}" target="_blank" rel="noopener noreferrer">${text}</a>`;
         }
@@ -111,7 +112,7 @@ function parseMarkdown(markdown) {
 }
 
 // Load markdown content into a specified element
-async function loadMarkdownContent(markdownFile, targetElement) {
+export async function loadMarkdownContent(markdownFile, targetElement) {
     try {
         const response = await fetch(markdownFile);
         if (!response.ok) {

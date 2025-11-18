@@ -3,18 +3,31 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TSR</title>
+    <meta name="description" content="personal website">
+    <title>TSR - Personal Website</title>
+    <link rel="icon" type="image/png" sizes="192x192" href="/assets/icon.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css">
     <script>
-        // Check if we're on GitHub Pages or localhost
-        var isGitHubPages = window.location.hostname.includes('github.io');
-        
-        if (isGitHubPages) {
-            // On GitHub Pages, use clean URL
-            window.location.href = '/about';
-        } else {
-            // On localhost, use direct path
-            window.location.href = '/pages/about.html';
-        }
+        // GitHub Pages SPA redirect handler
+        (function() {
+            var redirect = sessionStorage.redirect;
+            delete sessionStorage.redirect;
+            if (redirect && redirect !== location.pathname) {
+                history.replaceState(null, null, redirect);
+            }
+        })();
     </script>
 </head>
+<body>
+    <!-- Navigation -->
+    <div id="navbar-placeholder"></div>
+
+    <!-- Main Content - dynamically loaded by router -->
+    <div id="app"></div>
+
+    <!-- Footer -->
+    <div id="footer-placeholder"></div>
+
+    <script type="module" src="/js/main.js"></script>
+</body>
 </html>

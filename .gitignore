@@ -11,3 +11,10 @@ Thumbs.db
 # Temporary files
 *.tmp
 *~
+
+#npm packages
+node_modules/
+
+# Build output
+dist/
+build/
